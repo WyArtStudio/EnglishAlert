@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:onClick="closeKeyboard"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:background="@drawable/background_englishalert"
+    android:orientation="vertical"
+    tools:context=".activity.RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="185dp"
+            android:layout_height="136dp"
+            android:src="@drawable/logo"
+            android:layout_marginTop="94dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/register_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/add_photo"/>
+
+        <EditText
+            android:id="@+id/register_username"
+            android:layout_width="188dp"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            android:layout_height="47dp"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_email"
+            android:paddingStart="12dp"
+            android:background="@drawable/form_input"
+            android:hint="Username"/>
+
+        <EditText
+            android:id="@+id/register_email"
+            android:layout_width="188dp"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:layout_height="47dp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_email"
+            android:paddingStart="12dp"
+            android:background="@drawable/form_input"
+            android:hint="Email"/>
+
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="188dp"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_email"
+            android:paddingStart="12dp"
+            android:background="@drawable/form_input"
+            android:hint="Password"/>
+
+        <FrameLayout
+            android:id="@+id/register_button"
+            android:layout_width="188dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_password">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserratbold"
+                android:text="Daftar"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratregular"
+                android:text="Already have an account?"
+                android:textColor="#9E8E8E"
+                android:textSize="9sp" />
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserratbold"
+                android:text="Sign In"
+                android:textColor="#9E8E8E"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

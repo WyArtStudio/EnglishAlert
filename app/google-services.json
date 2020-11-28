@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "599563376796",
+    "firebase_url": "https://englishalert-839f3.firebaseio.com",
+    "project_id": "englishalert-839f3",
+    "storage_bucket": "englishalert-839f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599563376796:android:4e642b131c5f3b2cd4b559",
+        "android_client_info": {
+          "package_name": "com.hdfuzy.englishalert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599563376796-rtuk3vpdfkb5ltsjmo8fr82gliq1aujf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hdfuzy.englishalert",
+            "certificate_hash": "473d73a98b10e2abde285250e0c75e043e26f3b5"
+          }
+        },
+        {
+          "client_id": "599563376796-n9ajh6e9cq2obl3a08rdpid97vlfivdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkXkgQKgnPwO1n_eRPhU6hP9QU_-LlvNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599563376796-n9ajh6e9cq2obl3a08rdpid97vlfivdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
