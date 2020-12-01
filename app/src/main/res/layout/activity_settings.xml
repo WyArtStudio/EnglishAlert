@@ -10,18 +10,163 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation">
+        android:layout_above="@id/bottom_navigation"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp">
 
         <TextView
+            android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Activity Settings"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/montserratbold"
+            android:text="Pengaturan"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <FrameLayout
+                android:id="@+id/change_profile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button_gray"
+                android:paddingStart="20dp"
+                app:layout_constraintBottom_toTopOf="@id/change_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserratbold"
+                    android:text="Ubah Profil"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/change_password"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button_gray"
+                android:paddingStart="20dp"
+                app:layout_constraintBottom_toTopOf="@id/critics_and_suggestion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change_profile">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserratbold"
+                    android:text="Ubah Password"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/critics_and_suggestion"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button_gray"
+                android:paddingStart="20dp"
+                app:layout_constraintBottom_toTopOf="@id/faq"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/change_password">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserratbold"
+                    android:text="Kritik dan Saran"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/faq"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button_gray"
+                android:paddingStart="20dp"
+                app:layout_constraintBottom_toTopOf="@id/about_us"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/critics_and_suggestion">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserratbold"
+                    android:text="Pertanyaan Umum"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/about_us"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button_gray"
+                android:paddingStart="20dp"
+                app:layout_constraintBottom_toTopOf="@id/help"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/faq">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserratbold"
+                    android:text="Tentang Kami"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/help"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button_gray"
+                android:paddingStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_us">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserratbold"
+                    android:text="Bantuan"
+                    android:textColor="#797979"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

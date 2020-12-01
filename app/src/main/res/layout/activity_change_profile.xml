@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_englishalert"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChangeProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/montserratbold"
+            android:text="Ubah Profil"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/user_profile"
+        android:layout_width="80dp"
+        android:layout_marginTop="24dp"
+        android:layout_height="80dp"
+        android:src="@drawable/profile_picture"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/change_username"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="14sp"
+        android:paddingEnd="12dp"
+        android:textColor="#797979"
+        android:textColorHint="#A0A0A0"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center"
+        android:layout_height="47dp"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_email"
+        android:paddingStart="12dp"
+        android:background="@drawable/form_input"
+        android:hint="Nama Lengkap"/>
+
+    <EditText
+        android:id="@+id/change_email"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="14sp"
+        android:paddingEnd="12dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#797979"
+        android:textColorHint="#A0A0A0"
+        android:layout_gravity="center"
+        android:layout_height="47dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_email"
+        android:paddingStart="12dp"
+        android:background="@drawable/form_input"
+        android:hint="Email"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <FrameLayout
+            android:id="@+id/change_profile_button"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="32dp"
+            android:background="@drawable/button_blue_light"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserratbold"
+                android:text="Konfirmasi Perubahan"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

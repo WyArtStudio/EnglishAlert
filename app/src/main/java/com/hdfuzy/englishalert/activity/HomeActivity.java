@@ -2,6 +2,7 @@ package com.hdfuzy.englishalert.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,16 +53,25 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        ConstraintLayout gotoSearch = findViewById(R.id.goto_search);
+        gotoSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent search = new Intent(HomeActivity.this, SearchActivity.class);
+                startActivity(search);
+            }
+        });
+
         userName = findViewById(R.id.username);
         TextView greetingMessage = (TextView) findViewById(R.id.greeting_message);
         int timeOfDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        if(timeOfDay >= 0 && timeOfDay < 12){
+        if (timeOfDay >= 0 && timeOfDay < 12) {
             greetingMessage.setText("Selamat Pagi,");
-        }else if(timeOfDay >= 12 && timeOfDay < 16){
+        } else if (timeOfDay >= 12 && timeOfDay < 16) {
             greetingMessage.setText("Selamat Siang,");
-        }else if(timeOfDay >= 16 && timeOfDay < 21){
+        } else if (timeOfDay >= 16 && timeOfDay < 21) {
             greetingMessage.setText("Selamat Sore,");
-        }else if(timeOfDay >= 21 && timeOfDay < 24){
+        } else if (timeOfDay >= 21 && timeOfDay < 24) {
             greetingMessage.setText("Selamat Malam,");
         }
 
@@ -75,10 +86,14 @@ public class HomeActivity extends AppCompatActivity {
                     storageReference.getFile(file).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                            Glide.with(HomeActivity.this)
-                                    .load(BitmapFactory.decodeFile(file.getAbsolutePath()))
-                                    .error(R.drawable.add_photo)
-                                    .into(userPhoto);
+                            if (HomeActivity.this.isDestroyed()) {
+                                userPhoto.setBackgroundResource(R.drawable.profile_picture);
+                            } else {
+                                Glide.with(HomeActivity.this)
+                                        .load(BitmapFactory.decodeFile(file.getAbsolutePath()))
+                                        .error(R.drawable.profile_picture)
+                                        .into(userPhoto);
+                            }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -98,21 +113,42 @@ public class HomeActivity extends AppCompatActivity {
 
         icMateri = findViewById(R.id.ic_materi);
         Glide.with(this)
-                .load("https://firebasestorage.googleapis.com/v0/b/ismart-official.appspot.com/o/Glide%2Ficon_materi.png?alt=media&token=5aae40b2-9577-483e-8027-feec0d2f29a3")
+                .load("https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fic_materi.png?alt=media&token=3d00dfed-fd8b-4687-b18f-a656f32d5185")
                 .error(R.color.white)
                 .into(icMateri);
+        icMateri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent materi = new Intent(HomeActivity.this, MateriActivity.class);
+                startActivity(materi);
+            }
+        });
 
         icLatihan = findViewById(R.id.ic_latihan);
         Glide.with(this)
-                .load("https://firebasestorage.googleapis.com/v0/b/ismart-official.appspot.com/o/Glide%2Ficon_latihan.png?alt=media&token=5b0a1fae-726b-44cf-9ae0-4da8da253be6")
+                .load("https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fic_latihan.png?alt=media&token=ac32d142-b406-40c5-b9a5-41fa19370864")
                 .error(R.color.white)
                 .into(icLatihan);
+        icLatihan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent latihan = new Intent(HomeActivity.this, LatihanActivity.class);
+                startActivity(latihan);
+            }
+        });
 
         icKamus = findViewById(R.id.ic_kamus);
         Glide.with(this)
-                .load("https://firebasestorage.googleapis.com/v0/b/ismart-official.appspot.com/o/Glide%2Ficon_kamus.png?alt=media&token=78ede07f-fe21-4d20-9677-d8a610833de4")
+                .load("https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fic_translate.png?alt=media&token=8d3423d1-6729-466c-9353-9ee4dc7bf607")
                 .error(R.color.white)
                 .into(icKamus);
+        icKamus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kamus = new Intent(HomeActivity.this, TranslateActivity.class);
+                startActivity(kamus);
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
@@ -147,14 +183,14 @@ public class HomeActivity extends AppCompatActivity {
         flipperImages(0);
     }
 
-    private void flipperImages(int position) {
+    private void flipperImages(int i) {
         String imgUrl = null;
-        for (int i = 0; i <= 1; i++) {
+        for (i = 0; i <= 1; i++) {
             ImageView imageView = new ImageView(this);
             if (i == 0) {
-                imgUrl = "https://firebasestorage.googleapis.com/v0/b/ismart-official.appspot.com/o/Glide%2Fgroup_slider.png?alt=media&token=ec032768-5f6a-47a1-957a-7748870aad4e";
-            } else if (i == 1) {
-                imgUrl = "https://firebasestorage.googleapis.com/v0/b/ismart-official.appspot.com/o/Glide%2Ffollow_slider.png?alt=media&token=023703a9-e5e3-4251-bb9c-46c38cb09b1e";
+                imgUrl = "https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fdiscuss_slide.png?alt=media&token=6ac2e6cd-df69-4a99-bdd5-10a2451fcdcb";
+            } else {
+                imgUrl = "https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fcritics_slide.png?alt=media&token=31f7eb4e-286f-4e5b-a246-d730b7ced1d4";
             }
             Glide.with(HomeActivity.this)
                     .load(imgUrl)
@@ -164,13 +200,14 @@ public class HomeActivity extends AppCompatActivity {
             viewFlipper.setFlipInterval(4000);
             viewFlipper.setAutoStart(true);
             viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
-            viewFlipper.setOutAnimation(this, android.R.anim.slide_in_left);
+            viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
+            int finalI = i;
             imageView.setOnClickListener(v -> {
-                if (position == 0) {
-                    Intent group = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://chat.whatsapp.com/IjgAtgU5upQJMLNqRMRbKX"));
+                if (finalI == 0) {
+                    Intent group = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://chat.whatsapp.com/Dfk25RUiESwGijQitEzVMV"));
                     startActivity(group);
-                } else if (position == 1) {
-                    Intent instagram = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.instagram.com/ismartlearning.id/"));
+                } else if (finalI == 1) {
+                    Intent instagram = new Intent(HomeActivity.this, CriticsActivity.class);
                     startActivity(instagram);
                 }
             });

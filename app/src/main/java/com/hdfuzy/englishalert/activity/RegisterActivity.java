@@ -67,8 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                finish();
+                RegisterActivity.super.onBackPressed();
             }
         });
 
@@ -110,10 +109,10 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 if (userName.isEmpty()) {
-                    registerName.setError("Isi E-Mail Anda");
+                    registerName.setError("Isi nama Anda");
                     progressDialog.dismiss();
                 } else if (email.isEmpty()) {
-                    registerEmail.setError("Isi nama Anda");
+                    registerEmail.setError("Isi email Anda");
                     progressDialog.dismiss();
                 } else if (password.isEmpty()) {
                     registerPassword.setError("Buat password Anda");
@@ -238,8 +237,4 @@ public class RegisterActivity extends AppCompatActivity {
         ((InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), DEFAULT_KEYS_DISABLE);
     }
 
-    public void onBackPressed() {
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
-    }
 }

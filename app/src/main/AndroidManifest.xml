@@ -9,13 +9,23 @@
 
     <application
         android:allowBackup="true"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EnglishAlert">
-        <activity android:name=".activity.IllustrationActivity"/>
+        <activity android:name=".activity.CriticsActivity"></activity>
+        <activity android:name=".activity.AboutUsActivity" />
+        <activity android:name=".activity.ForgotPasswordActivity" />
+        <activity android:name=".activity.FaqActivity" />
+        <activity android:name=".activity.ChangePasswordActivity" />
+        <activity android:name=".activity.ChangeProfileActivity" />
+        <activity android:name=".activity.TranslateActivity" />
+        <activity android:name=".activity.LatihanActivity" />
+        <activity android:name=".activity.MateriActivity" />
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".activity.IllustrationActivity" />
         <activity android:name=".activity.SettingsActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.DiscussionActivity" />

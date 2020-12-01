@@ -50,7 +50,7 @@ public class IllustrationActivity extends AppCompatActivity {
         List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Belajar Lebih Mudah", "Belajar dimanapun, kapanpun, tanpa batasan.", "https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fimg1.png?alt=media&token=03b626b0-bdbe-4f9b-9da6-8f37d08056a0"));
         mList.add(new ScreenItem("Latihan Soal", "Latihan soal komperhensif agar lebih mudah memahami materi.", "https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fimg2.png?alt=media&token=aff59222-6c87-45b7-9de5-87d8f3f88a67"));
-        mList.add(new ScreenItem("Capai Targetmu", "Mulai raih mimpimu sekarang!", "https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fimg3.png?alt=media&token=471cce19-2ed8-4107-8067-1b1c236a4c81"));
+        mList.add(new ScreenItem("Capai Targetmu", "Mulai raih mimpimu sekarang!", "https://firebasestorage.googleapis.com/v0/b/englishalert-839f3.appspot.com/o/Glide%2Fimg3.png?alt=media&token=aceefb21-8147-47ae-b519-d93e5570210c"));
         introViewPagerAdapter = new IntroViewPagerAdapter(this, mList);
         screenPager.setAdapter(introViewPagerAdapter);
         tabIndicator.setupWithViewPager(screenPager);
@@ -125,8 +125,8 @@ public class IllustrationActivity extends AppCompatActivity {
     private void loadLastScreen() {
         tabIndicator.setVisibility(View.GONE);
         btnNext.setVisibility(View.GONE);
-        btnGetStarted.setVisibility(View.VISIBLE);
         btnGetStarted.setAnimation(btnAnimation);
+        btnGetStarted.setVisibility(View.VISIBLE);
     }
 
 }
