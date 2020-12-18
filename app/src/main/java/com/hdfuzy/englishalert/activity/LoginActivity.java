@@ -27,11 +27,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.database.DatabaseReference;
 import com.hdfuzy.englishalert.R;
+import com.maksim88.passwordedittext.PasswordEditText;
 
 public class LoginActivity extends AppCompatActivity {
     TextView resetPassword, register;
     FrameLayout loginButton;
-    EditText loginEmail, loginPassword;
+    EditText loginEmail;
+    PasswordEditText loginPassword;
     DatabaseReference reff;
     private static final String USER = "users";
     private static final String TAG = "LoginActivity";

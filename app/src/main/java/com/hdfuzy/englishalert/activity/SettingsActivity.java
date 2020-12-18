@@ -49,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                         finish();
                         break;
                     case R.id.navigation_discussion:
-                        Intent discuss = new Intent(SettingsActivity.this, DiscussionActivity.class);
+                        Intent discuss = new Intent(SettingsActivity.this, ArticleActivity.class);
                         startActivity(discuss);
                         overridePendingTransition(0, 0);
                         finish();

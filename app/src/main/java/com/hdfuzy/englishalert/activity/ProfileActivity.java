@@ -11,9 +11,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -40,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private static final String TAG = "ProfileActivity";
     private static final String USER = "users";
     DatabaseReference reff;
-    TextView userName, userMail;
+    TextView userName, userMail, materialLoadStat, quizLoadStat;
     CircleImageView userPhoto;
 
     @Override
@@ -63,13 +61,17 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         userName = findViewById(R.id.username);
         userMail = findViewById(R.id.useremail);
         userPhoto = findViewById(R.id.userphoto);
+        materialLoadStat = findViewById(R.id.material_load);
+        quizLoadStat = findViewById(R.id.quiz_load);
         reff = FirebaseDatabase.getInstance().getReference().child(USER).child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         reff.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(DataSnapshot snapshot) {
                 String name = Objects.requireNonNull(snapshot.child("userName").getValue()).toString();
                 String mail = snapshot.child("email").getValue().toString();
+                Long mLoad = (Long) snapshot.child("materialLoad").getValue();
+                Long qLoad = (Long) snapshot.child("quizLoad").getValue();
                 StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://englishalert-839f3.appspot.com/users_photos").child(snapshot.child("imgUrl").getValue().toString());
                 try {
                     final File file = File.createTempFile("image", "jpg");
@@ -88,7 +90,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(ProfileActivity.this, "Failed to Load! Check your network connection.", Toast.LENGTH_SHORT).show();
                         }
                     });
                 } catch (IOException e) {
@@ -96,10 +97,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 }
                 userName.setText(name);
                 userMail.setText(mail);
+                materialLoadStat.setText("" + mLoad);
+                quizLoadStat.setText("" + qLoad);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError error) {
 
             }
         });
@@ -117,7 +120,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         finish();
                         break;
                     case R.id.navigation_discussion:
-                        Intent discuss = new Intent(ProfileActivity.this, DiscussionActivity.class);
+                        Intent discuss = new Intent(ProfileActivity.this, ArticleActivity.class);
                         startActivity(discuss);
                         overridePendingTransition(0, 0);
                         finish();

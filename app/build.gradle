@@ -41,6 +41,8 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'com.airbnb.android:lottie:3.5.0'
+    implementation 'com.maksim88:PasswordEditText:v0.9'
+    implementation 'com.google.mlkit:translate:16.1.1'
     //noinspection GradleDynamicVersion
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

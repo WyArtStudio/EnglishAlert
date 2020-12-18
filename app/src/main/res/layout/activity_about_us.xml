@@ -34,4 +34,305 @@
 
     </LinearLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="8dp"
+                android:elevation="4dp"
+                android:background="@drawable/background_white"
+                android:orientation="vertical">
+                
+                <ImageView
+                    android:layout_width="133dp"
+                    android:layout_height="98dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:text="@string/description"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="#424242"
+                    android:fontFamily="@font/montserratregular"/>
+                
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anggota Kelompok"
+                android:fontFamily="@font/montserratbold"
+                android:textColor="#424242"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"/>
+            
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:elevation="6dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/background_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/analyst"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/profile_picture"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginLeft="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wilda Nurjannah"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="12sp"
+                            android:textColor="#424242"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="System Analyst"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="10sp"
+                            android:textColor="#A0A0A0"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11190910000053"
+                            android:textColor="#797979"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/montserratregular"
+                            android:layout_marginTop="6dp"/>
+
+                    </LinearLayout>
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:elevation="6dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/background_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/designer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/profile_picture"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginLeft="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Muhammad Aufa Atha"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="12sp"
+                            android:textColor="#424242"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UI/UX Designer"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="10sp"
+                            android:textColor="#A0A0A0"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11190910000068"
+                            android:textColor="#797979"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/montserratregular"
+                            android:layout_marginTop="6dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:elevation="6dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/background_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/developer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/profile_picture"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginLeft="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wahyu Hendiarto Wibowo"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="12sp"
+                            android:textColor="#424242"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Android Developer"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="10sp"
+                            android:textColor="#A0A0A0"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11190910000066"
+                            android:textColor="#797979"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/montserratregular"
+                            android:layout_marginTop="6dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:elevation="6dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/background_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/tester"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/profile_picture"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginLeft="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Zidny Fiqha Aristoi"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="12sp"
+                            android:textColor="#424242"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Software Tester"
+                            android:fontFamily="@font/montserratbold"
+                            android:textSize="10sp"
+                            android:textColor="#A0A0A0"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11190910000064"
+                            android:textColor="#797979"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/montserratregular"
+                            android:layout_marginTop="6dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </LinearLayout>

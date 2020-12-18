@@ -2,7 +2,6 @@ package com.hdfuzy.englishalert.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
@@ -42,7 +40,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final String USER = "users";
-    private DatabaseReference reff;
     TextView userName;
     ViewFlipper viewFlipper;
     ImageView icMateri, icLatihan, icKamus;
@@ -52,15 +49,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        ConstraintLayout gotoSearch = findViewById(R.id.goto_search);
-        gotoSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent search = new Intent(HomeActivity.this, SearchActivity.class);
-                startActivity(search);
-            }
-        });
 
         userName = findViewById(R.id.username);
         TextView greetingMessage = (TextView) findViewById(R.id.greeting_message);
@@ -92,13 +80,13 @@ public class HomeActivity extends AppCompatActivity {
                                 Glide.with(HomeActivity.this)
                                         .load(BitmapFactory.decodeFile(file.getAbsolutePath()))
                                         .error(R.drawable.profile_picture)
+                                        .fitCenter()
                                         .into(userPhoto);
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(HomeActivity.this, "Failed to Load Image", Toast.LENGTH_SHORT).show();
                         }
                     });
                 } catch (IOException e) {
@@ -119,7 +107,7 @@ public class HomeActivity extends AppCompatActivity {
         icMateri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent materi = new Intent(HomeActivity.this, MateriActivity.class);
+                Intent materi = new Intent(HomeActivity.this, MaterialActivity.class);
                 startActivity(materi);
             }
         });
@@ -132,7 +120,7 @@ public class HomeActivity extends AppCompatActivity {
         icLatihan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent latihan = new Intent(HomeActivity.this, LatihanActivity.class);
+                Intent latihan = new Intent(HomeActivity.this, ExerciseActivity.class);
                 startActivity(latihan);
             }
         });
@@ -145,7 +133,7 @@ public class HomeActivity extends AppCompatActivity {
         icKamus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent kamus = new Intent(HomeActivity.this, TranslateActivity.class);
+                Intent kamus = new Intent(HomeActivity.this, TranslateIdnEngActivity.class);
                 startActivity(kamus);
             }
         });
@@ -157,7 +145,7 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_discussion:
-                        Intent discuss = new Intent(HomeActivity.this, DiscussionActivity.class);
+                        Intent discuss = new Intent(HomeActivity.this, ArticleActivity.class);
                         startActivity(discuss);
                         overridePendingTransition(0, 0);
                         finish();

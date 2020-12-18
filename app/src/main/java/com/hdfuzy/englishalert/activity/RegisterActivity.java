@@ -39,13 +39,15 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.hdfuzy.englishalert.R;
 import com.hdfuzy.englishalert.model.User;
+import com.maksim88.passwordedittext.PasswordEditText;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RegisterActivity extends AppCompatActivity {
     CircleImageView registerPhoto;
     FrameLayout registerButton;
-    EditText registerName, registerEmail, registerPassword;
+    EditText registerName, registerEmail;
+    PasswordEditText registerPassword;
     TextView login;
     Uri pickedImgUri;
     static int PReqCode = 1;
@@ -117,13 +119,18 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (password.isEmpty()) {
                     registerPassword.setError("Buat password Anda");
                     progressDialog.dismiss();
+                } else if (registerPassword.length() < 6) {
+                    registerPassword.setError("Minimal 6 karakter");
+                    progressDialog.dismiss();
                 } else if (pickedImgUri == null) {
                     showMessage("Upload foto profil Anda");
                     progressDialog.dismiss();
                 } else if (connected) {
                     if (email.matches(emailPattern)) {
                         String imgUrl = pickedImgUri.getLastPathSegment();
-                        user = new User(email, password, userName, imgUrl);
+                        Long materialLoad = Long.valueOf(0);
+                        Long quizLoad = Long.valueOf(0);
+                        user = new User(email, password, userName, imgUrl, materialLoad, quizLoad);
                         registerUser(email, password);
                         progressDialog.dismiss();
                     } else {

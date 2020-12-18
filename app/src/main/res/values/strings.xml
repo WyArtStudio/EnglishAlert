@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">English Alert</string>
+    <string name="description">English Alert! merupakan platform <br />pembelajaran bahasa inggris secara gratis, <br />dengan tampilan yang mudah dimengerti <br />dan juga menyenangkan.<br />
+Aplikasi ini dibuat untuk memenuhi tugas <br />akhir matakuliah Rekayasa Perangkat Lunak dengan dosen pengampu <br />Ibu Dewi Khairani, M.Sc. </string>
+    <string name="desc_faq1">English Alert! merupakan platform pembelajaran bahasa inggris secara gratis, dengan tampilan yang mudah dimengerti dan juga menyenangkan.</string>
+    <string name="desc_faq2">Materi dan latihan disusun secara komperhensif untuk membantu kamu belajar lebih baik.</string>
+    <string name="desc_faq3">Aplikasi ini dibuat untuk memenuhi tugas akhir matakuliah Rekayasa Perangkat Lunak dengan dosen pengampu Ibu Dewi Khairani, M.Sc</string>
+    <string name="quotes"><i>&quot;Batasan dalam Bahasaku,<br /> merupakan Batasan dari Duniaku.&quot;</i></string>
+    <string name="level1">Sparkling Newcomer</string>
+    <string name="level2">A Curios Learner</string>
+    <string name="level3">The Ambitious One</string>
 </resources>

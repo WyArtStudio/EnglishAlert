@@ -24,7 +24,7 @@
             android:layout_width="185dp"
             android:layout_height="136dp"
             android:src="@drawable/logo"
-            android:layout_marginTop="94dp"
+            android:layout_marginTop="92dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,63 +47,85 @@
             android:layout_gravity="center"
             android:src="@drawable/add_photo"/>
 
-        <EditText
-            android:id="@+id/register_username"
-            android:layout_width="188dp"
-            android:fontFamily="@font/montserratregular"
-            android:textSize="14sp"
-            android:paddingEnd="12dp"
-            android:layout_marginTop="24dp"
-            android:layout_gravity="center"
-            android:layout_height="47dp"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/login_email"
-            android:paddingStart="12dp"
-            android:background="@drawable/form_input"
-            android:hint="Username"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-        <EditText
-            android:id="@+id/register_email"
-            android:layout_width="188dp"
-            android:fontFamily="@font/montserratregular"
-            android:textSize="14sp"
-            android:paddingEnd="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center"
-            android:layout_height="47dp"
-            android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/login_email"
-            android:paddingStart="12dp"
-            android:background="@drawable/form_input"
-            android:hint="Email"/>
+            <EditText
+                android:id="@+id/register_username"
+                android:layout_width="188dp"
+                android:fontFamily="@font/montserratregular"
+                android:textSize="14sp"
+                android:textColorHint="#A0A0A0"
+                android:textColor="#505050"
+                android:paddingEnd="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center"
+                android:layout_height="47dp"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login_email"
+                android:paddingStart="12dp"
+                android:background="@drawable/form_input"
+                android:hint="Username"/>
 
-        <EditText
-            android:id="@+id/register_password"
-            android:layout_width="188dp"
-            android:fontFamily="@font/montserratregular"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
-            android:layout_height="47dp"
-            android:paddingEnd="12dp"
-            android:layout_gravity="center"
-            android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/login_email"
-            android:paddingStart="12dp"
-            android:background="@drawable/form_input"
-            android:hint="Password"/>
+            <EditText
+                android:id="@+id/register_email"
+                android:layout_width="188dp"
+                android:fontFamily="@font/montserratregular"
+                android:textSize="14sp"
+                android:paddingEnd="12dp"
+                android:textColorHint="#A0A0A0"
+                android:textColor="#505050"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:layout_height="47dp"
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login_email"
+                android:paddingStart="12dp"
+                android:background="@drawable/form_input"
+                android:hint="Email"/>
+
+            <com.maksim88.passwordedittext.PasswordEditText
+                android:id="@+id/register_password"
+                android:layout_width="188dp"
+                android:fontFamily="@font/montserratregular"
+                android:textSize="14sp"
+                android:textColorHint="#A0A0A0"
+                android:textColor="#505050"
+                android:layout_marginTop="8dp"
+                android:layout_height="47dp"
+                android:paddingEnd="12dp"
+                android:layout_gravity="center"
+                android:inputType="textPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login_email"
+                android:paddingStart="12dp"
+                android:background="@drawable/form_input"
+                android:hint="Password"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Min. 6 Karakter"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textSize="9sp"/>
+
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/register_button"
             android:layout_width="188dp"
             android:layout_height="47dp"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +151,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/montserratregular"
                 android:text="Already have an account?"
                 android:textColor="#9E8E8E"
